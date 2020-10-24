@@ -80,4 +80,29 @@ public class MyList<T> implements Collection {
         return true;
     }
     
+    public Node<T> end() {
+    Node<T> iter = this.root;
+    if (iter ==null)
+        return null;
+    while (iter.hasNextNode()) {
+        iter = iter.getNextNode();
+    }
+    return iter;
+   
+}  
+    public Node<T> indexAt(long index) {
+        Node<T> iter = this.root;
+        if (iter == null)
+            return null;
+        if (index == 0)
+            return iter;
+        if (index < this.length && index > 0) {
+            for (; index >= 0; --index) {
+                iter = iter.getNextNode();
+            }
+            return iter;
+        }
+        else
+            return null;
+        }
     
