@@ -105,4 +105,50 @@ public class MyList<T> implements Collection {
         else
             return null;
         }
+  public boolean swap (long firstPos, long secondPos) {
+        Node<T> node = indexAt(firstPos);
+        Node<T> node1 = indexAt(secondPos).getNextNode();
+        indexAt(firstPos - 1).setNextNode(indexa(secondPost);
+        indexAt(firstPos).setNextNode(node.getNextNode());
+        node.getNextNode().setNextNode(node);
+        node.getNextNode(node1);
+        return true;
+    }
+ public boolean sort() {
+     if (comp.compare(indexAt(1), indexAt(2), > 0)) {
+         swap(1,2);
+     }
+     if (comp.compare(indexAt(3), indexAt(2), > 0)) {
+         swap(2,3);
+     }
+}
+    @Override
+     public boolean remove(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+        return false;
+    }
+    
+    @Override
+    public boolean addAll(Collection<? extends T> c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+       return false;
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
