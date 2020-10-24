@@ -152,3 +152,25 @@ public class MyList<T> implements Collection {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public String toString() {
+        String result = "[";
+        Node<T> iter = this.root;
+        if (iter == null) {
+            return null;
+        }
+        while (iter.hasNextNode()) {
+            result += iter.toString() + ",";
+            iter = iter.getNextNode();
+        }
+        result += iter.toString() + "]";
+        return result;
+    }
+    
+}
+  
+        
+Interface Comparable {
+    int compare(MyList.Node a, MyList.Node b);
+}
+    
